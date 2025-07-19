@@ -1,5 +1,7 @@
+from lib.nato_dict import nato_alphabet
+
 def spell_phonetically(text: str) -> str:
-    return f'Hi, {text}'
+    return "\n".join([f'{char} as {nato_alphabet[char.upper()]}' for char in text])
 
 # Interactive loop
 print('Type a word or username to spell phonetically. Type "quit" to exit.')
@@ -9,4 +11,4 @@ while True:
         print("Exiting. Goodbye!")
         break
     result = spell_phonetically(user_input)
-    print('Phonetic Spelling:', result)
+    print(f'Phonetic Spelling: \n{result}')
